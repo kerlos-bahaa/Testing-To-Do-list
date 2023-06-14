@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "watch": "jest --watch add.test.js",
+    "watch": "jest --watch todo.test.js",
     "dev": "webpack serve --mode development",
     "build": "webpack --mode production"
   },
@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.22.5",
     "babel-eslint": "^10.1.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.8.1",

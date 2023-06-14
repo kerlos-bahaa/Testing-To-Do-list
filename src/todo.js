@@ -42,4 +42,3 @@ function editTask(index, description) {
 export {
   todos, addTask, deleteTask, editTask, loadTasks, updateIndexes,
 };
-
