@@ -52,6 +52,13 @@ const updateTaskCompletion = (index, completed) => {
   return todos;
 };
 
+const clearCompleted = () => {
+  const updatedTodos = todos.filter((task) => !task.completed);
+  todos.length = 0;
+  Array.prototype.push.apply(todos, updatedTodos);
+  return todos;
+};
+
 export {
-  addTask, deleteTask, editTask, updateTaskCompletion,
+  addTask, deleteTask, editTask, updateTaskCompletion, clearCompleted,
 };

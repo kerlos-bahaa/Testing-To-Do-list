@@ -1,5 +1,5 @@
 import {
-  addTask, deleteTask, editTask, updateTaskCompletion,
+  addTask, deleteTask, editTask, updateTaskCompletion, clearCompleted,
 } from './__mock__/todo.js';
 
 describe('addTask', () => {
@@ -107,5 +107,25 @@ describe('addTask', () => {
       },
     ];
     expect(updateTaskCompletion(2, true)).toEqual(todos);
+  });
+  it('Clear completed tasks', () => {
+    const todos = [
+      {
+        description: 'a',
+        completed: false,
+        index: 1,
+      },
+      {
+        description: 'Description Changed',
+        completed: false,
+        index: 4,
+      },
+      {
+        description: 'Buy groceries',
+        completed: false,
+        index: 5,
+      },
+    ];
+    expect(clearCompleted()).toEqual(todos);
   });
 });
