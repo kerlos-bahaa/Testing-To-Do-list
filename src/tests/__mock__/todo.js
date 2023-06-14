@@ -1,16 +1,16 @@
 const todos = [
   {
-    description: 'abcd',
+    description: 'a',
     completed: false,
     index: 1,
   },
   {
-    description: 'abcd',
+    description: 'ab',
     completed: false,
     index: 2,
   },
   {
-    description: 'abcd',
+    description: 'abc',
     completed: false,
     index: 3,
   },
@@ -36,4 +36,14 @@ const deleteTask = (index) => {
   return todos;
 };
 
-export { addTask, deleteTask };
+const editTask = (index, string) => {
+  const task = todos.find((task) => task.index === index + 1);
+  if (task) {
+    task.description = string;
+  }
+  return todos;
+};
+
+export {
+  addTask, deleteTask, editTask, todos,
+};
