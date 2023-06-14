@@ -1,12 +1,12 @@
-import { addTask } from "./addTask";
+import { addTask } from '../todo.js';
 
-describe("addTask", () => {
-  it("should add a new task to the list", () => {
+describe('addTask', () => {
+  it('should add a new task to the list', () => {
     const todos = [];
-    addTask("Buy groceries");
+    addTask('Buy groceries');
     expect(todos).toEqual([
       {
-        description: "Buy groceries",
+        description: 'Buy groceries',
         completed: false,
         index: 0,
       },
