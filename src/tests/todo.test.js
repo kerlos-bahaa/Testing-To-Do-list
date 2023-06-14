@@ -1,4 +1,6 @@
-import { addTask, deleteTask, editTask } from './__mock__/todo.js';
+import {
+  addTask, deleteTask, editTask, updateTaskCompletion,
+} from './__mock__/todo.js';
 
 describe('addTask', () => {
   it('should add a new task to the list', () => {
@@ -81,5 +83,29 @@ describe('addTask', () => {
 
     expect(editTask(4, 'Description Changed')).toEqual(todos);
   });
-  
+  it('Update completion of a task', () => {
+    const todos = [
+      {
+        description: 'a',
+        completed: false,
+        index: 1,
+      },
+      {
+        description: 'ab',
+        completed: true,
+        index: 2,
+      },
+      {
+        description: 'Description Changed',
+        completed: false,
+        index: 4,
+      },
+      {
+        description: 'Buy groceries',
+        completed: false,
+        index: 5,
+      },
+    ];
+    expect(updateTaskCompletion(2, true)).toEqual(todos);
+  });
 });

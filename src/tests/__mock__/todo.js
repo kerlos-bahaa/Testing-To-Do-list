@@ -37,13 +37,21 @@ const deleteTask = (index) => {
 };
 
 const editTask = (index, string) => {
-  const task = todos.find((task) => task.index === index + 1);
+  const task = todos.find((task) => task.index === index);
   if (task) {
     task.description = string;
   }
   return todos;
 };
 
+const updateTaskCompletion = (index, completed) => {
+  const task = todos.find((task) => task.index === index);
+  if (task) {
+    task.completed = completed;
+  }
+  return todos;
+};
+
 export {
-  addTask, deleteTask, editTask, todos,
+  addTask, deleteTask, editTask, updateTaskCompletion,
 };
