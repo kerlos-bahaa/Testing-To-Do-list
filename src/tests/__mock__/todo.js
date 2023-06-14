@@ -1,16 +1,16 @@
 const todos = [
   {
-    description: 'abcd',
+    description: 'a',
     completed: false,
     index: 1,
   },
   {
-    description: 'abcd',
+    description: 'ab',
     completed: false,
     index: 2,
   },
   {
-    description: 'abcd',
+    description: 'abc',
     completed: false,
     index: 3,
   },
@@ -36,4 +36,29 @@ const deleteTask = (index) => {
   return todos;
 };
 
-export { addTask, deleteTask };
+const editTask = (index, string) => {
+  const task = todos.find((task) => task.index === index);
+  if (task) {
+    task.description = string;
+  }
+  return todos;
+};
+
+const updateTaskCompletion = (index, completed) => {
+  const task = todos.find((task) => task.index === index);
+  if (task) {
+    task.completed = completed;
+  }
+  return todos;
+};
+
+const clearCompleted = () => {
+  const updatedTodos = todos.filter((task) => !task.completed);
+  todos.length = 0;
+  Array.prototype.push.apply(todos, updatedTodos);
+  return todos;
+};
+
+export {
+  addTask, deleteTask, editTask, updateTaskCompletion, clearCompleted,
+};
